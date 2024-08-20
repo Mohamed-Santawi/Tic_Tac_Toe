@@ -1,0 +1,226 @@
+:root {
+  --color-blue: #233d4a;
+  --color-light-blue: #a8bec9;
+  --color-dark-blue: #192a32;
+  --color-darker-blue: #112129;
+  --color-orange: #f2b237;
+  --color-aqua: #31c4be;
+  --color-white: #fff;
+  --border-radius: 1rem;
+  --grid-rows: 3;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: Arial, sans-serif;
+}
+.container {
+  font-size: 1.6rem;
+  min-height: 100vh;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  backdrop-filter: blur(5px);
+  overflow: hidden;
+  background-size: cover;
+  &::before {
+    content: "";
+    position: absolute;
+    width: 130%;
+    height: 130%;
+    background: url(../pattern.jpg);
+    background-size: cover;
+    filter: blur(35px);
+    z-index: -1;
+    opacity: 0.8;
+  }
+}
+.board {
+  display: grid;
+  grid-template-columns: repeat(var(--grid-rows), 100px);
+  grid-template-rows: repeat(var(--grid-rows), 100px);
+  gap: 1.5rem;
+  margin: 0 auto 4rem;
+  &--four {
+    grid-template-columns: repeat(var(--grid-rows), 80px);
+    grid-template-rows: repeat(var(--grid-rows), 80px);
+  }
+  &--five {
+    grid-template-columns: repeat(var(--grid-rows), 60px);
+    grid-template-rows: repeat(var(--grid-rows), 60px);
+  }
+  &__cell {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--color-blue);
+    border-radius: var(--border-radius);
+    position: relative;
+    isolation: isolate;
+    cursor: pointer;
+    font-size: 4rem;
+    font-family: "Rubik Mono One", sans-serif;
+    &::before {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-color: var(--color-darker-blue);
+      bottom: -0.4rem;
+      border-radius: var(--border-radius);
+    }
+    &::after {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      border-radius: var(--border-radius);
+      background-color: var(--color-blue);
+    }
+    &--X {
+      color: var(--color-aqua);
+    }
+    &--O {
+      color: var(--color-orange);
+    }
+  }
+  &__btn {
+    background-color: transparent;
+    color: var(--color-aqua);
+    border: 1px solid var(--color-aqua);
+    padding: 0.5rem 0.9rem;
+    font-size: 1.7rem;
+    font-weight: bold;
+    letter-spacing: 0.1rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    height: 3.5rem;
+  }
+  &__value {
+    z-index: 1;
+    user-select: none;
+  }
+  &__btns {
+    width: 35rem;
+    display: flex;
+    justify-content: space-between;
+    &--five {
+      margin-top: -1.5rem;
+    }
+  }
+  &__length {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-top: -1rem;
+    justify-content: center;
+    align-items: center;
+  }
+  &__label {
+    color: var(--color-white);
+    font-size: 1.7rem;
+    letter-spacing: 0.1rem;
+    background-color: var(--color-aqua);
+    padding: 0.7rem;
+    border-radius: var(--border-radius);
+  }
+  &__input {
+    padding: 0.3rem 0;
+    border-radius: 0.3rem;
+    border: none;
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--color-darker-blue);
+    text-align: center;
+    cursor: pointer;
+    position: relative;
+    width: 5rem;
+    appearance: textfield;
+    &--inc {
+      transform: rotate(-90deg);
+    }
+    &:focus {
+      outline: none;
+    }
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button {
+      display: none; /* Hide default input spin buttons */
+    }
+    &-wrapper {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+  }
+  &__inputBtn {
+    background-color: transparent;
+    border: none;
+    font-size: 2.8rem;
+    font-weight: bold;
+    color: var(--color-darker-blue);
+    cursor: pointer;
+    width: 2.2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    // &--inc {
+    //   transform: rotate(-90deg);
+    // }
+    // &--dec {
+    //   transform: rotate(-90deg);
+    // }
+  }
+}
+.score {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  font-size: 3rem;
+  color: var(--color-white);
+  letter-spacing: 0.2rem;
+  font-style: italic;
+  &__head {
+    text-transform: uppercase;
+  }
+  &__box {
+    display: flex;
+    gap: 8rem;
+  }
+  &__playerX,
+  &__playerO {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    font-style: italic;
+    font-size: 3rem;
+    font-weight: bold;
+  }
+  &__playerX {
+    color: var(--color-aqua);
+  }
+  &__playerO {
+    color: var(--color-orange);
+  }
+  &__value {
+    font-size: 3.5rem;
+    font-weight: bold;
+  }
+}
+

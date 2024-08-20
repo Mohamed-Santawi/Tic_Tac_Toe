@@ -1,0 +1,31 @@
+:root {
+  --color-blue: #233d4a;
+  --color-light-blue: #a8bec9;
+  --color-dark-blue: #192a32;
+  --color-darker-blue: #112129;
+  --color-orange: #f2b237;
+  --color-aqua: #31c4be;
+  --border-radius: 1rem;
+  --grid-rows: 3;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: Arial, sans-serif;
+}
+.container {
+  width: 100%;
+  min-height: 100vh;
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
