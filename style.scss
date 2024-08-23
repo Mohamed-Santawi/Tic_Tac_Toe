@@ -217,9 +217,6 @@ body {
     font-weight: bold;
   }
 }
-#increaseBtn {
-  color: var(--color-darker-blue);
-}
 @media (max-width: 1050px) {
   .container {
     gap: 5rem;
@@ -233,7 +230,7 @@ body {
 }
 @media (max-width: 800px) {
   .container {
-    gap: 3rem;
+    gap: 1.5rem;
   }
   .board__length {
     gap: 2rem;
@@ -241,7 +238,7 @@ body {
 }
 @media (max-width: 500px) {
   .container {
-    gap: 2rem;
+    gap: 1.5rem;
   }
   .board__length {
     gap: 2rem;
