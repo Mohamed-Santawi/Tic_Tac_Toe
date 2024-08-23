@@ -217,4 +217,29 @@ body {
 .score__value {
   font-size: 3.5rem;
   font-weight: bold;
+}
+
+@media (max-width: 1050px) {
+  .container {
+    gap: 5rem;
+  }
+  .board__length {
+    gap: 2rem;
+  }
+  .score__head {
+    margin-bottom: 2rem;
+  }
+}
+@media (max-width: 800px) {
+  .container {
+    justify-content: space-around;
+  }
+}
+@media (max-width: 500px) {
+  .container {
+    justify-content: space-around;
+  }
+  .board__length {
+    gap: 2rem;
+  }
 }/*# sourceMappingURL=style.css.map */
