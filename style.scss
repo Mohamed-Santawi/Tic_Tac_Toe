@@ -175,12 +175,6 @@ body {
     justify-content: center;
     align-items: center;
     margin: 0 auto;
-    // &--inc {
-    //   transform: rotate(-90deg);
-    // }
-    // &--dec {
-    //   transform: rotate(-90deg);
-    // }
   }
 }
 .score {
@@ -223,7 +217,9 @@ body {
     font-weight: bold;
   }
 }
-
+#increaseBtn {
+  color: var(--color-darker-blue);
+}
 @media (max-width: 1050px) {
   .container {
     gap: 5rem;
@@ -237,12 +233,15 @@ body {
 }
 @media (max-width: 800px) {
   .container {
-    justify-content: space-around;
+    gap: 3rem;
+  }
+  .board__length {
+    gap: 2rem;
   }
 }
 @media (max-width: 500px) {
   .container {
-    justify-content: space-around;
+    gap: 3rem;
   }
   .board__length {
     gap: 2rem;
